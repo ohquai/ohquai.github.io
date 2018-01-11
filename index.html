@@ -80,11 +80,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
-		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="weixin" target="_blank" href="#" title="weixin"><i class="icon-weixin"></i></a>
+					<a class="github" target="_blank" href="https://github.com/ohquai/" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="mail" target="_blank" href="/chengpierre@163.com" title="mail"><i class="icon-mail"></i></a>
 		        
@@ -125,11 +121,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
-			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-			        
-						<a class="weixin" target="_blank" href="#" title="weixin"><i class="icon-weixin"></i></a>
+						<a class="github" target="_blank" href="https://github.com/ohquai/" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="mail" target="_blank" href="/chengpierre@163.com" title="mail"><i class="icon-mail"></i></a>
 			        
@@ -183,37 +175,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###<strong>从docker-cn安装centos系统</strong> </p>
-<p>为了更快速pull到image(镜像)，一种是翻墙下，一种是通过国内的镜像下载，这里推荐直接使用docker-cn的镜像。</p>
-<blockquote>
-<p>docker pull registry.docker-cn.com/library/centos<br><img src="https://github.com/ohquai/online-file/blob/master/centos/pull-image.jpg" alt="pull Centos镜像"></p>
-</blockquote>
-<h2 id="进入容器（container）内部看一下，并退出"><a href="#进入容器（container）内部看一下，并退出" class="headerlink" title="###进入容器（container）内部看一下，并退出"></a>###<strong>进入容器（container）内部看一下，并退出</strong></h2><blockquote>
-<p>docker run -it registry.docker-cn.com/library/centos bash<br><img src="https://github.com/ohquai/online-file/blob/master/centos/in-container.jpg" alt="此处输入图片的描述"><br>ctrl-d</p>
-</blockquote>
-<p>重命名和commit成新的image<br>这步可以晚点做，但为了使我们使用的image更清楚</p>
-<p>docker commit XXX(containerid) risk-ml/centos-python</p>
-<p>3、正式进入centos系统<br>docker run -it risk-ml/centos-python bash</p>
-<p>4、安装几个必要的包<br>yum install wget gcc make zlib-devel git<br>yum install readline-devel openssl-devel<br>yum install bzip2-devel ncurses-devel sqlite-devel gdbm-devel xz-devel tk-devel </p>
-<p>5、下载python3源码<br>wget <a href="https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tar.xz" target="_blank" rel="noopener">https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tar.xz</a></p>
-<p>6、解包、解压缩<br>xz -d Python-3.6.1.tar.xz<br>tar -xvf Python-3.6.1.tar</p>
-<p>7、配置<br>cd Python-3.6.1<br>./configure –prefix=/usr/local/python3.6 –enable-optimizations</p>
-<p>8、编译、安装（在重新yum了之后，需要重新configure和make install）<br>make<br>make install</p>
-<p>9、命令映射<br>ln -s /usr/local/python3.6/bin/python3 /usr/bin/python3<br>ln -s /usr/local/python3.6/bin/pip3 /usr/bin/pip3</p>
-<p>10、为原装的python2安装pip<br>yum install epel-release<br>yum install python-pip</p>
-<p>11、python2安装matplotlib<br>yum install freetype freetype-devel python-freetype<br>yum install libpng libpng-devel python-pypng<br>yum install python-matplotlib<br>代码中用：<br>import matplotlib<br>matplotlib.use(‘Agg’)<br>from matplotlib.pyplot import *   # 会报错<br>注意！！！！    无界面的LINUX服务器本身就是无法plt操作的，所以会报错，如果真有需求以后再解决</p>
-<p>12、python2安装xgboost（先无视，后面有更新版本的）<br>yum install gcc gcc-c++<br>yum install lapack lapack-devel blas blas-devel</p>
-<p>wget <a href="https://github.com/dmlc/xgboost/archive/0.47.tar.gz" target="_blank" rel="noopener">https://github.com/dmlc/xgboost/archive/0.47.tar.gz</a><br>tar -zxvf 0.47.tar.gz<br>cd xgboost-0.47</p>
-<p>make -j4<br>cd python-package/<br>python setup.py install</p>
-<p>numpy版本过高会与xgboost不兼容<br>pip uninstall numpy<br>pip install numpy==1.11.1</p>
-<p>为python3.6做同样的事<br>pip3 uninstall numpy<br>pip3 install numpy==1.11.1<br>python3 setup.py install</p>
-<p>12、python2安装tensorflow和keras<br>pip install np-utils</p>
-<p>13、python2安装新版本xgboost<br>yum install gcc gcc-c++<br>yum install lapack lapack-devel blas blas-devel</p>
-<p>git clone –recursive <a href="https://github.com/dmlc/xgboost" target="_blank" rel="noopener">https://github.com/dmlc/xgboost</a><br>cd xgboost<br>git submodule init<br>git submodule update<br>make -j4</p>
-<p>cd python-package/<br>python setup.py install<br>python3 setup.py install</p>
-<p>14、执行文件<br>docker run -it -v /home/chengteng/docker-file/autoencoder:/usr/ct/project risk-ml/centos-python:1.2 bash<br>在本地（或者是服务器）创建文件的存放目录： /home/chengteng/docker-file/autoencoder<br>在docker的container中创建同步的目录：/usr/ct/project<br>通过上面的命令可以做文件夹的映射</p>
-<p>参考目录：<br><a href="https://segmentfault.com/a/1190000009922582" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009922582</a><br><a href="http://blog.csdn.net/u011860731/article/details/46534321" target="_blank" rel="noopener">http://blog.csdn.net/u011860731/article/details/46534321</a><br><a href="http://blog.csdn.net/dream_angel_z/article/details/46955705" target="_blank" rel="noopener">http://blog.csdn.net/dream_angel_z/article/details/46955705</a><br><a href="http://blog.csdn.net/levy_cui/article/details/60573520" target="_blank" rel="noopener">http://blog.csdn.net/levy_cui/article/details/60573520</a><br><a href="https://github.com/dmlc/xgboost/issues/909" target="_blank" rel="noopener">https://github.com/dmlc/xgboost/issues/909</a><br><a href="https://www.cnblogs.com/saolv/p/6963314.html" target="_blank" rel="noopener">https://www.cnblogs.com/saolv/p/6963314.html</a></p>
-
+        <h1 id="Docker安装基于CentOS的双Python系统流程"><a href="#Docker安装基于CentOS的双Python系统流程" class="headerlink" title="Docker安装基于CentOS的双Python系统流程"></a>Docker安装基于CentOS的双Python系统流程</h1><h2 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h2><p>目前docker容器非常火爆，许多公司已经将docker作为开发和生产环境部署的重要环节，docker的学习不可避免。同时，由于家中和公司一共4台电脑+N台服务器，每一台都要配置环境，相当繁琐，docker的功能正好满足我们在不同环境可以轻松进行开发和测试的需求。因此，我将自己学习、安装、应用docker的过程分享出来，以供读者借鉴，少走弯路。<br>测试主要是在Windows10系统上进行，目的是在Docker上创建一个Centos系统，然后安装2.7和3.6两个版本的Python，以便日后的机器学习和深度学习的需求。<br>Docker本身的安装不再赘言，去下载一个docker toolbox目前看来是最快的。在我的windows系统上，不需要安装docker或VM VirtualBox，直接运行docker toolbox即可进入Docker环境。<br><br></p>
+<h2 id="CentOS环境搭建"><a href="#CentOS环境搭建" class="headerlink" title="CentOS环境搭建"></a>CentOS环境搭建</h2>
+        
+          <a class="article-more-a" href="/2018/01/11/Docker安装基于CentOS的双Python系统流程/#more">more >></a>
+        
       
 
       
