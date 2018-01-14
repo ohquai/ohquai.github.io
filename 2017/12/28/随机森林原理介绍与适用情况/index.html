@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Random-Forest | CTの一方寸土</title>
+  <title>随机森林原理介绍与适用情况 | CTの一方寸土</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="随机森林原理介绍与适用情况随机森林=========它通过自助法（bootstrap）重采样技术，从原始训练样本集N中有放回地重复随机抽取k个样本生成新的训练样本集合，然后根据自助样本集生成k个分类树组成随机森林，新数据的分类结果按分类树投票多少形成的分数而定。在生成每棵树的时候，每个节点变量都仅仅在随机选出的少数变量中产生。因此，不但样本是随机的，连每个节点变量（Features）的产生都是随机">
+  <meta name="description" content="随机森林原理介绍与适用情况随机森林它通过自助法（bootstrap）重采样技术，从原始训练样本集N中有放回地重复随机抽取k个样本生成新的训练样本集合，然后根据自助样本集生成k个分类树组成随机森林，新数据的分类结果按分类树投票多少形成的分数而定。在生成每棵树的时候，每个节点变量都仅仅在随机选出的少数变量中产生。因此，不但样本是随机的，连每个节点变量（Features）的产生都是随机的。且由于随机性，">
 <meta name="keywords" content="机器学习,随机森林">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Random-Forest">
+<meta property="og:title" content="随机森林原理介绍与适用情况">
 <meta property="og:url" content="http://yoursite.com/2017/12/28/随机森林原理介绍与适用情况/index.html">
 <meta property="og:site_name" content="CTの一方寸土">
-<meta property="og:description" content="随机森林原理介绍与适用情况随机森林=========它通过自助法（bootstrap）重采样技术，从原始训练样本集N中有放回地重复随机抽取k个样本生成新的训练样本集合，然后根据自助样本集生成k个分类树组成随机森林，新数据的分类结果按分类树投票多少形成的分数而定。在生成每棵树的时候，每个节点变量都仅仅在随机选出的少数变量中产生。因此，不但样本是随机的，连每个节点变量（Features）的产生都是随机">
-<meta property="og:updated_time" content="2018-01-13T14:43:05.881Z">
+<meta property="og:description" content="随机森林原理介绍与适用情况随机森林它通过自助法（bootstrap）重采样技术，从原始训练样本集N中有放回地重复随机抽取k个样本生成新的训练样本集合，然后根据自助样本集生成k个分类树组成随机森林，新数据的分类结果按分类树投票多少形成的分数而定。在生成每棵树的时候，每个节点变量都仅仅在随机选出的少数变量中产生。因此，不但样本是随机的，连每个节点变量（Features）的产生都是随机的。且由于随机性，">
+<meta property="og:updated_time" content="2018-01-14T14:17:02.135Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Random-Forest">
-<meta name="twitter:description" content="随机森林原理介绍与适用情况随机森林=========它通过自助法（bootstrap）重采样技术，从原始训练样本集N中有放回地重复随机抽取k个样本生成新的训练样本集合，然后根据自助样本集生成k个分类树组成随机森林，新数据的分类结果按分类树投票多少形成的分数而定。在生成每棵树的时候，每个节点变量都仅仅在随机选出的少数变量中产生。因此，不但样本是随机的，连每个节点变量（Features）的产生都是随机">
+<meta name="twitter:title" content="随机森林原理介绍与适用情况">
+<meta name="twitter:description" content="随机森林原理介绍与适用情况随机森林它通过自助法（bootstrap）重采样技术，从原始训练样本集N中有放回地重复随机抽取k个样本生成新的训练样本集合，然后根据自助样本集生成k个分类树组成随机森林，新数据的分类结果按分类树投票多少形成的分数而定。在生成每棵树的时候，每个节点变量都仅仅在随机选出的少数变量中产生。因此，不但样本是随机的，连每个节点变量（Features）的产生都是随机的。且由于随机性，">
   
     <link rel="alternative" href="/atom.xml" title="CTの一方寸土" type="application/atom+xml">
   
@@ -165,7 +165,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Random-Forest
+      随机森林原理介绍与适用情况
     </h1>
   
 
@@ -178,9 +178,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="随机森林原理介绍与适用情况"><a href="#随机森林原理介绍与适用情况" class="headerlink" title="随机森林原理介绍与适用情况"></a>随机森林原理介绍与适用情况</h1><h2 id="随机森林"><a href="#随机森林" class="headerlink" title="随机森林"></a>随机森林</h2><p>=========<br>它通过自助法（bootstrap）重采样技术，从原始训练样本集N中有放回地重复随机抽取k个样本生成新的训练样本集合，然后根据自助样本集生成k个分类树组成随机森林，新数据的分类结果按分类树投票多少形成的分数而定。在生成每棵树的时候，每个节点变量都仅仅在随机选出的少数变量中产生。因此，不但样本是随机的，连每个节点变量（Features）的产生都是随机的。且由于随机性，一般不需要额外做剪枝</p>
-<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p>=========<br><a id="more"></a></p>
-<ol>
+        <h1 id="随机森林原理介绍与适用情况"><a href="#随机森林原理介绍与适用情况" class="headerlink" title="随机森林原理介绍与适用情况"></a>随机森林原理介绍与适用情况</h1><h2 id="随机森林"><a href="#随机森林" class="headerlink" title="随机森林"></a>随机森林</h2><p>它通过自助法（bootstrap）重采样技术，从原始训练样本集N中有放回地重复随机抽取k个样本生成新的训练样本集合，然后根据自助样本集生成k个分类树组成随机森林，新数据的分类结果按分类树投票多少形成的分数而定。在生成每棵树的时候，每个节点变量都仅仅在随机选出的少数变量中产生。因此，不但样本是随机的，连每个节点变量（Features）的产生都是随机的。且由于随机性，一般不需要额外做剪枝</p>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点<a id="more"></a></h2><ol>
 <li>在数据集上表现良好，两个随机性的引入，使得随机森林不容易陷入过拟合（样本随机，特征随机）</li>
 <li>在当前的很多数据集上，相对其他算法有着很大的优势，两个随机性的引入，使得随机森林具有很好的抗噪声能力</li>
 <li>它能够处理很高维度（feature很多）的数据，并且不用做特征选择，对数据集的适应能力强：既能处理离散型数据，也能处理连续型数据，数据集无需规范化</li>
@@ -438,19 +437,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">特征工程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">自编码器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">随机森林</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">特征工程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">自编码器</a>
               </li>
             
             <div class="clearfix"></div>
