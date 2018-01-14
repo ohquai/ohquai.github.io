@@ -6,31 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Docker安装基于CentOS的双Python系统流程 | CTの一方寸土</title>
+  <title>Category: 编程 | CTの一方寸土</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Docker安装基于CentOS的双Python系统流程引子目前docker容器非常火爆，许多公司已经将docker作为开发和生产环境部署的重要环节，docker的学习不可避免。同时，由于家中和公司一共4台电脑+N台服务器，每一台都要配置环境，相当繁琐，docker的功能正好满足我们在不同环境可以轻松进行开发和测试的需求。因此，我将自己学习、安装、应用docker的过程分享出来，以供读者借鉴，少走">
-<meta name="keywords" content="Docker,安装流程">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Docker安装基于CentOS的双Python系统流程">
-<meta property="og:url" content="http://yoursite.com/2018/01/11/Docker安装基于CentOS的双Python系统流程/index.html">
+  <meta name="description" content="SHU, UTC机器学习、特征工程、深度学习、NLP">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CTの一方寸土">
+<meta property="og:url" content="http://yoursite.com/categories/programming/index.html">
 <meta property="og:site_name" content="CTの一方寸土">
-<meta property="og:description" content="Docker安装基于CentOS的双Python系统流程引子目前docker容器非常火爆，许多公司已经将docker作为开发和生产环境部署的重要环节，docker的学习不可避免。同时，由于家中和公司一共4台电脑+N台服务器，每一台都要配置环境，相当繁琐，docker的功能正好满足我们在不同环境可以轻松进行开发和测试的需求。因此，我将自己学习、安装、应用docker的过程分享出来，以供读者借鉴，少走">
-<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/centos/pull-image.jpg">
-<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/centos/in-container.jpg">
-<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/save-as-image.JPG">
-<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/yum-tool.JPG">
-<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/yum-tool2.JPG">
-<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/download-python.JPG">
-<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/unpack-unzip.JPG">
-<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/configure.JPG">
-<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/make.JPG">
-<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/make-install.JPG">
-<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/matplotlib.JPG">
-<meta property="og:updated_time" content="2018-01-11T17:18:56.468Z">
+<meta property="og:description" content="SHU, UTC机器学习、特征工程、深度学习、NLP">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker安装基于CentOS的双Python系统流程">
-<meta name="twitter:description" content="Docker安装基于CentOS的双Python系统流程引子目前docker容器非常火爆，许多公司已经将docker作为开发和生产环境部署的重要环节，docker的学习不可避免。同时，由于家中和公司一共4台电脑+N台服务器，每一台都要配置环境，相当繁琐，docker的功能正好满足我们在不同环境可以轻松进行开发和测试的需求。因此，我将自己学习、安装、应用docker的过程分享出来，以供读者借鉴，少走">
-<meta name="twitter:image" content="https://github.com/ohquai/online-file/raw/master/centos/pull-image.jpg">
+<meta name="twitter:title" content="CTの一方寸土">
+<meta name="twitter:description" content="SHU, UTC机器学习、特征工程、深度学习、NLP">
   
     <link rel="alternative" href="/atom.xml" title="CTの一方寸土" type="application/atom+xml">
   
@@ -77,14 +63,14 @@
 	        
 				<li><a href="/tags/深度学习/">深度学习</a></li>
 	        
+				<li><a href="/tags/特征工程/">特征工程</a></li>
+	        
+				<li><a href="/tags/Docker/">Docker</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
-    			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
-    			
-            
     			
     			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
     			
@@ -133,6 +119,10 @@
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -149,13 +139,17 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 16.666666666666668%"><a href="/tags/随笔/">随笔</a></li>
 		        
-					<li style="width: 25%"><a href="/tags/机器学习/">机器学习</a></li>
+					<li style="width: 16.666666666666668%"><a href="/tags/机器学习/">机器学习</a></li>
 		        
-					<li style="width: 25%"><a href="/tags/深度学习/">深度学习</a></li>
+					<li style="width: 16.666666666666668%"><a href="/tags/深度学习/">深度学习</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/tags/特征工程/">特征工程</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/tags/Docker/">Docker</a></li>
 		        
 				</ul>
 			</nav>
@@ -170,205 +164,93 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Docker安装基于CentOS的双Python系统流程" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Docker安装基于CentOS的双Python系统流程
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/posts/programming/2018-01-13-自编码器原理及介绍/.html" class="archive-article-date">
+  	<time datetime="2018-01-13T14:34:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-13</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/posts/programming/2018-01-13-自编码器原理及介绍/.html">自编码器原理及介绍</a>
     </h1>
   
 
-        
-        <a href="/2018/01/11/Docker安装基于CentOS的双Python系统流程/" class="archive-article-date">
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">特征工程</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">自编码器</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">深度学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/programming//" class="article-tag-list-link color3">编程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/posts/programming/2018-01-11-Docker安装基于CentOS的双Python系统流程/.html" class="archive-article-date">
   	<time datetime="2018-01-10T17:07:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-11</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Docker安装基于CentOS的双Python系统流程"><a href="#Docker安装基于CentOS的双Python系统流程" class="headerlink" title="Docker安装基于CentOS的双Python系统流程"></a>Docker安装基于CentOS的双Python系统流程</h1><h2 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h2><p>目前docker容器非常火爆，许多公司已经将docker作为开发和生产环境部署的重要环节，docker的学习不可避免。同时，由于家中和公司一共4台电脑+N台服务器，每一台都要配置环境，相当繁琐，docker的功能正好满足我们在不同环境可以轻松进行开发和测试的需求。因此，我将自己学习、安装、应用docker的过程分享出来，以供读者借鉴，少走弯路。<br>测试主要是在Windows10系统上进行，目的是在Docker上创建一个Centos系统，然后安装2.7和3.6两个版本的Python，以便日后的机器学习和深度学习的需求。<br>Docker本身的安装不再赘言，去下载一个docker toolbox目前看来是最快的。在我的windows系统上，不需要安装docker或VM VirtualBox，直接运行docker toolbox即可进入Docker环境。<br><br></p>
-<h2 id="CentOS环境搭建"><a href="#CentOS环境搭建" class="headerlink" title="CentOS环境搭建"></a>CentOS环境搭建</h2><a id="more"></a>
-<h3 id="1-从docker-cn安装CentOS系统"><a href="#1-从docker-cn安装CentOS系统" class="headerlink" title="1. 从docker-cn安装CentOS系统"></a><strong>1. 从docker-cn安装CentOS系统</strong></h3><p>为了更快速pull到image(镜像)，一种是翻墙下，一种是通过国内的镜像下载，这里推荐直接使用docker-cn的镜像。</p>
-<blockquote>
-<p>docker pull registry.docker-cn.com/library/centos</p>
-</blockquote>
-<p><img src="https://github.com/ohquai/online-file/raw/master/centos/pull-image.jpg" alt="pull Centos镜像"><br><br></p>
-<h3 id="2-进入容器（Container）内部看一下，并退出"><a href="#2-进入容器（Container）内部看一下，并退出" class="headerlink" title="2. 进入容器（Container）内部看一下，并退出"></a><strong>2. 进入容器（Container）内部看一下，并退出</strong></h3><blockquote>
-<p>docker run -it registry.docker-cn.com/library/centos bash</p>
-</blockquote>
-<p><img src="https://github.com/ohquai/online-file/raw/master/centos/in-container.jpg" alt="进入container内部"></p>
-<blockquote>
-<p>ctrl-d</p>
-</blockquote>
-<h3 id="3-创建image"><a href="#3-创建image" class="headerlink" title="3. 创建image"></a><strong>3. 创建image</strong></h3><p>这步可以晚点做，但为了使我们调用便捷，我们先创建一个image。377为container id的前三位，一般前三位即已足够。</p>
-<blockquote>
-<p>docker commit 377 server-centos</p>
-</blockquote>
-<p><img src="https://github.com/ohquai/online-file/raw/master/save-as-image.JPG" alt="创建image"></p>
-<h3 id="4-正式进入CentOS系统"><a href="#4-正式进入CentOS系统" class="headerlink" title="4. 正式进入CentOS系统"></a><strong>4. 正式进入CentOS系统</strong></h3><blockquote>
-<p>docker run -it risk-ml/centos-python bash</p>
-</blockquote>
-<h3 id="5-安装必要的包"><a href="#5-安装必要的包" class="headerlink" title="5. 安装必要的包"></a><strong>5. 安装必要的包</strong></h3><p>为了进一步的安装，以及之后的步骤减少反复，这里讲大致需要的包先统一安装完。以后如果发现缺了，还需要yum install补充，有些还需要后续的编译和安装才能奏效。</p>
-<blockquote>
-<p>yum install wget gcc make zlib-devel git<br>yum install readline-devel openssl-devel<br>yum install bzip2-devel ncurses-devel sqlite-devel gdbm-devel xz-devel tk-devel </p>
-</blockquote>
-<p><img src="https://github.com/ohquai/online-file/raw/master/yum-tool.JPG" alt="安装依赖包"><br>选择y继续<br><img src="https://github.com/ohquai/online-file/raw/master/yum-tool2.JPG" alt="选择y继续"></p>
-<h3 id="6-下载Python3源码"><a href="#6-下载Python3源码" class="headerlink" title="6. 下载Python3源码"></a><strong>6. 下载Python3源码</strong></h3><p>CentOS自带的是Python2.7，Python3以上的版本需要自己安装。<br>在线下载python3.6的压缩包，这个速度到是挺快的。</p>
-<blockquote>
-<p>wget <a href="https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tar.xz" target="_blank" rel="noopener">https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tar.xz</a></p>
-</blockquote>
-<p><img src="https://github.com/ohquai/online-file/raw/master/download-python.JPG" alt="下载Python"></p>
-<h3 id="7-解包、解压缩"><a href="#7-解包、解压缩" class="headerlink" title="7. 解包、解压缩"></a><strong>7. 解包、解压缩</strong></h3><blockquote>
-<p>xz -d Python-3.6.1.tar.xz<br>tar -xvf Python-3.6.1.tar</p>
-</blockquote>
-<p><img src="https://github.com/ohquai/online-file/raw/master/unpack-unzip.JPG" alt="解包解压"></p>
-<h3 id="8-配置"><a href="#8-配置" class="headerlink" title="8. 配置"></a><strong>8. 配置</strong></h3><blockquote>
-<p>cd Python-3.6.1<br>./configure –prefix=/usr/local/python3.6 –enable-optimizations</p>
-</blockquote>
-<p><img src="https://github.com/ohquai/online-file/raw/master/configure.JPG" alt="配置"><br>–prefix 是预期安装目录，–enable-optimizations 是优化选项（LTO，PGO 等）加上这个 flag 编译后，性能有 10% 左右的优化（如果没记错的话），但是这会明显的增加编译时间。</p>
-<h3 id="9-编译、安装"><a href="#9-编译、安装" class="headerlink" title="9. 编译、安装"></a><strong>9. 编译、安装</strong></h3><blockquote>
-<p>make</p>
-</blockquote>
-<p><img src="https://github.com/ohquai/online-file/raw/master/make.JPG" alt="make"></p>
-<blockquote>
-<p>make install</p>
-</blockquote>
-<p><img src="https://github.com/ohquai/online-file/raw/master/make-install.JPG" alt="make-install"><br>注意，有时候发现缺少了一些包，在重新yum了之后，需要重新进行configure和make install</p>
-<h3 id="10-命令映射"><a href="#10-命令映射" class="headerlink" title="10. 命令映射"></a><strong>10. 命令映射</strong></h3><p>这个步骤是为了以后操作更简便，我们将python3的命令映射到环境变量的path中，可以直接调用，省去了指定路径。同时避免了在同时有python2和python3的环境中的版本指定问题。</p>
-<blockquote>
-<p>ln -s /usr/local/python3.6/bin/python3 /usr/bin/python3<br>ln -s /usr/local/python3.6/bin/pip3 /usr/bin/pip3</p>
-</blockquote>
-<p>当我们需要通过python2运行脚本或安装包时，只需要执行：</p>
-<blockquote>
-<p>python script.py<br>pip install pandas</p>
-</blockquote>
-<p>当我们需要通过python3运行脚本或安装包时，只需要执行：</p>
-<blockquote>
-<p>python3 script.py<br>pip3 install pandas</p>
-</blockquote>
-<p>至此，Centos内部的环境基本搭建完毕，已经可以使用python了，我们可以通过python –version和python3 –version查看版本号以确认。<br><br></p>
-<hr>
-<h2 id="Python环境搭建"><a href="#Python环境搭建" class="headerlink" title="Python环境搭建"></a>Python环境搭建</h2><h3 id="1-python2安装pip"><a href="#1-python2安装pip" class="headerlink" title="1. python2安装pip"></a><strong>1. python2安装pip</strong></h3><p>因为原装的Python2.7没有pip，我们需要安装一下，具体不再赘述</p>
-<blockquote>
-<p>yum install epel-release<br>yum install python-pip</p>
-</blockquote>
-<p><br></p>
-<h3 id="2-python2安装matplotlib"><a href="#2-python2安装matplotlib" class="headerlink" title="2. python2安装matplotlib"></a><strong>2. python2安装matplotlib</strong></h3><p>这一步放在最前面，是因为碰到了些问题。注意，此处没有用pip安装，而是用yum安装，并且需要预装一些依赖包</p>
-<blockquote>
-<p>yum install freetype freetype-devel python-freetype<br>yum install libpng libpng-devel python-pypng<br>yum install python-matplotlib</p>
-</blockquote>
-<p>虽然matplotlib已经安装完毕，但还是有一些问题暂时没得到解决。我们import matplotlib没有问题，但是pyplot的调用会引发报错。<br>最简单的解决办法是在使用pyplot的脚本中加上use(‘Agg’)，问题即可解决</p>
-<blockquote>
-<p>import matplotlib<br>matplotlib.use(‘Agg’)<br>from matplotlib.pyplot import * </p>
-</blockquote>
-<p><img src="https://github.com/ohquai/online-file/raw/master/matplotlib.JPG" alt="matplotlib正常调用"><br><br></p>
-<h3 id="3-安装xgboost"><a href="#3-安装xgboost" class="headerlink" title="3. 安装xgboost"></a><strong>3. 安装xgboost</strong></h3><p>在安装xgboost过程中，容易碰到各种问题，特别是安装0.60以上的版本。<br>各种尝试后，最有效的是通过git clone github上的xgboost进行安装。</p>
-<blockquote>
-<p># 提前安装一些依赖包<br>yum install gcc gcc-c++<br>yum install lapack lapack-devel blas blas-devel</p>
-<p># 下载xgboost源码，并编译<br>git clone –recursive <a href="https://github.com/dmlc/xgboost" target="_blank" rel="noopener">https://github.com/dmlc/xgboost</a><br>cd xgboost<br>git submodule init<br>git submodule update<br>make -j4</p>
-<p># 到路径下直接进行安装，Python2和Python3都安装一下<br>cd python-package/<br>python setup.py install<br>python3 setup.py install</p>
-</blockquote>
-<p><br></p>
-<h3 id="4-安装tensorflow和keras"><a href="#4-安装tensorflow和keras" class="headerlink" title="4. 安装tensorflow和keras"></a><strong>4. 安装tensorflow和keras</strong></h3><p>如果在深度学习方面有要求的话，可以顺便装一下keras和tensorflow。<br>整体都没什么问题，中间缺少的依赖包也可以提前装一下</p>
-<blockquote>
-<p>pip install np-utils</p>
-</blockquote>
-<hr>
-<h2 id="其他Docker操作"><a href="#其他Docker操作" class="headerlink" title="其他Docker操作"></a>其他Docker操作</h2><p>既然要用Docker，一切实用且必要的操作我在这里也简单介绍一下</p>
-<h3 id="1-文件映射"><a href="#1-文件映射" class="headerlink" title="1. 文件映射"></a><strong>1. 文件映射</strong></h3><p>当我们在主机上已经有一些脚本或者文件，希望通过Centos中的Python环境去执行或读取。<br>此时，需要将本地的文件夹在远程端做一个同步的映射。</p>
-<blockquote>
-<p>docker run -it -v /home/me/docker/project1:/usr/me/project2 server-centos bash</p>
-</blockquote>
-<ul>
-<li>在本地（或者是服务器）创建文件的存放目录： /home/me/docker/project1</li>
-<li>在docker的container中创建同步的目录：/usr/me/project2</li>
-</ul>
-<p>通过上面的命令可以做文件夹的映射，执行上面的run命令之后，会运行镜像，并且在CentOS的/usr/me/project2路径下会自动包含所有本地/home/me/docker/project1中的文件。<br>当然，如果中间隔的中间服务器太多，我们还需要先将文件进行传输（复制)，接下来会讲到。<br><br></p>
-<h3 id="2-服务器之间的文件传输"><a href="#2-服务器之间的文件传输" class="headerlink" title="2. 服务器之间的文件传输"></a><strong>2. 服务器之间的文件传输</strong></h3><p>经常地，我们要在Windows和Linux服务器之间或者两个linux服务器之间进行文件传输，我们分开介绍。</p>
-<h4 id="2-1-Windows与Linux服务器之间"><a href="#2-1-Windows与Linux服务器之间" class="headerlink" title="2.1. Windows与Linux服务器之间"></a><strong>2.1. Windows与Linux服务器之间</strong></h4><p>推荐XFPT，可以直接进行界面化操作，这里不做详细展开。</p>
-<h4 id="2-2-Linux服务器之间（有密码）"><a href="#2-2-Linux服务器之间（有密码）" class="headerlink" title="2.2. Linux服务器之间（有密码）"></a><strong>2.2. Linux服务器之间（有密码）</strong></h4><blockquote>
-<p>scp -r /home/me/docker/project1 me@xxx.xx.xxx.xx:/usr/me/project2</p>
-</blockquote>
-<p>会将整个project1文件夹拷贝到project2文件夹中，默认是需要输入登录密码的</p>
-<h4 id="2-3-Linux服务器之间（无密码）"><a href="#2-3-Linux服务器之间（无密码）" class="headerlink" title="2.3. Linux服务器之间（无密码）"></a><strong>2.3. Linux服务器之间（无密码）</strong></h4><p>如果希望无密码登录，需要通过ssh传输</p>
-<blockquote>
-<p><strong>server A</strong></p>
-<blockquote>
-<p>进入用户目录：  cd /home/me<br>创建.ssh目录：  mkdir .ssh<br>进入.ssh目录：  cd .ssh<br>生成密钥对：  ssh-keygen -b 1024 -t rsa</p>
-</blockquote>
-<p><strong>server B</strong></p>
-<blockquote>
-<p>进入用户目录： cd /usr/me<br>创建.ssh目录： mkdir .ssh<br>进入.ssh目录： cd .ssh<br>创建新文件：  touch authorized_keys</p>
-</blockquote>
-<p><strong>server A</strong></p>
-<blockquote>
-<p>Key授权：scp -p .ssh/id_rsa.pub me@xxx.xx.xxx.xx:/usr/me/.ssh/authorized_keys/authorized_keys<br>将A生成的id_rsa.pub放到B上的授权key文件中</p>
-</blockquote>
-<p><strong>server A</strong></p>
-<blockquote>
-<p>无密码传输：scp -r /home/me/docker/project1 me@xxx.xx.xxx.xx:/usr/me/project2</p>
-</blockquote>
-</blockquote>
-<p>需要注意，因为传输中没有指定key的位置，因此，最后执行scp操作时需要在包含.ssh文件夹的目录下<br><br></p>
-<h3 id="3-镜像的保存与转移"><a href="#3-镜像的保存与转移" class="headerlink" title="3. 镜像的保存与转移"></a><strong>3. 镜像的保存与转移</strong></h3><p>当我们有一份完整的比较好的镜像，希望可以在别的服务器上使用，通常有两种方式：</p>
-<ol>
-<li>上传镜像到仓库中（本地或公共仓库），但是另一台服务器很肯能只是与当前服务器局域网想通而没有公网的，所以如果使用仓库的方式，只能自己搭建私有仓库（private registry）</li>
-<li>将镜像保存为文件上传到其他服务器再从文件中载入镜像</li>
-</ol>
-<p>具体实现方式如下：</p>
-<blockquote>
-<p># 存储成压缩包</p>
-<blockquote>
-<p>docker save server-centos &gt; /home/me/server-centos.tar</p>
-</blockquote>
-<p># 使用ssh等方法传输文件之后，通过压缩包解压：  </p>
-<blockquote>
-<p>scp -r /home/me/server-centos.tar me@xxx.xx.xxx.xx:/usr/me<br>docker load &lt; /usr/me/server-centos.tar<br>docker images</p>
-</blockquote>
-</blockquote>
-<p><br><br>作者: 奥拉基爾<br>2018 年 01月 11日    </p>
-<h2 id="参考目录"><a href="#参考目录" class="headerlink" title="参考目录"></a>参考目录</h2><ul>
-<li>[1]: <a href="https://segmentfault.com/a/1190000009922582" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009922582</a></li>
-<li>[2]: <a href="http://blog.csdn.net/u011860731/article/details/46534321" target="_blank" rel="noopener">http://blog.csdn.net/u011860731/article/details/46534321</a></li>
-<li>[3]: <a href="http://blog.csdn.net/dream_angel_z/article/details/46955705" target="_blank" rel="noopener">http://blog.csdn.net/dream_angel_z/article/details/46955705</a></li>
-<li>[4]: <a href="http://blog.csdn.net/levy_cui/article/details/60573520" target="_blank" rel="noopener">http://blog.csdn.net/levy_cui/article/details/60573520</a></li>
-<li>[5]: <a href="https://github.com/dmlc/xgboost/issues/909" target="_blank" rel="noopener">https://github.com/dmlc/xgboost/issues/909</a></li>
-<li>[6]: <a href="https://www.cnblogs.com/saolv/p/6963314.html" target="_blank" rel="noopener">https://www.cnblogs.com/saolv/p/6963314.html</a></li>
-<li>[7]: <a href="http://www.linuxidc.com/Linux/2015-01/111894.htm" target="_blank" rel="noopener">http://www.linuxidc.com/Linux/2015-01/111894.htm</a></li>
-</ul>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/posts/programming/2018-01-11-Docker安装基于CentOS的双Python系统流程/.html">Docker安装基于CentOS的双Python系统流程</a>
+    </h1>
+  
+
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -384,115 +266,93 @@
 		</ul>
 	</div>
 
-      
+          
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/programming//" class="article-tag-list-link color3">编程</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-      
 
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/01/11/Docker安装基于CentOS的双Python系统流程/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
-  
-    <a href="/2018/01/13/自编码器原理及介绍/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          自编码器原理及介绍
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/12/28/随机森林原理介绍与适用情况（综述篇）/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">随机森林原理介绍与适用情况（综述篇）</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    
+    
+      
+        </div></section>
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
         </div>
-        
-        
-    </div>
-</aside>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/posts/programming/2017-12-28-随机森林原理介绍与适用情况（综述篇）/.html" class="archive-article-date">
+  	<time datetime="2017-12-27T17:47:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/posts/programming/2017-12-28-随机森林原理介绍与适用情况（综述篇）/.html">随机森林原理介绍与适用情况（综述篇）</a>
+    </h1>
+  
+
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">随机森林</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/programming//" class="article-tag-list-link color3">编程</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
 
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
 
-  
-  
-  
-
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -515,14 +375,14 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
-		isCategory: false,
+		isCategory: true,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
-		innerArchive: true,
+		innerArchive: false,
 		showTags: false
 	}
 </script>
@@ -546,109 +406,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
   </div>
   <div class="tools-wrap">
-    
-    	<section class="tools-section tools-section-all" q-show="innerArchive">
-        <div class="search-wrap">
-          <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
-          <i class="icon-search icon" q-show="search|isEmptyStr"></i>
-          <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
-        </div>
-        <div class="widget tagcloud search-tag">
-          <p class="search-tag-wording">tag:</p>
-          <label class="search-switch">
-            <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
-          </label>
-          <ul class="article-tag-list" q-show="showTags">
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安装流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">特征工程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">自编码器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">随机森林</a>
-              </li>
-            
-            <div class="clearfix"></div>
-          </ul>
-        </div>
-        <ul class="search-ul">
-          <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
-            3、在根目录_config.yml里添加配置：
-<pre style="font-size: 12px;" q-show="jsonFail">
-  jsonContent:
-    meta: false
-    pages: false
-    posts:
-      title: true
-      date: true
-      path: true
-      text: false
-      raw: false
-      content: false
-      slug: false
-      updated: false
-      comments: false
-      link: false
-      permalink: false
-      excerpt: false
-      categories: false
-      tags: true
-</pre>
-          </p>
-          <li class="search-li" q-repeat="items" q-show="isShow">
-            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
-            <p class="search-time">
-              <i class="icon-calendar icon"></i>
-              <span q-text="date|dateformat"></span>
-            </p>
-            <p class="search-tag">
-              <i class="icon-price-tags icon"></i>
-              <span q-repeat="tags" q-on="click:choseTag(e, name)" q-text="name|tagformat"></span>
-            </p>
-          </li>
-        </ul>
-    	</section>
     
 
     
@@ -688,7 +461,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">SHU, UTC&lt;br&gt;&lt;br&gt;热衷于机器学习，另在特征工程、深度学习、NLP方面有所深入&lt;br&gt;欢迎大家交流指正，谢谢</div>
   	  	
     	</section>
     
