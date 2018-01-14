@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/12 | CTの一方寸土</title>
+  <title>自编码器原理及介绍 | CTの一方寸土</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SHU, UTC机器学习、特征工程、深度学习、NLP">
-<meta property="og:type" content="website">
-<meta property="og:title" content="CTの一方寸土">
-<meta property="og:url" content="http://yoursite.com/archives/2017/12/index.html">
+  <meta name="description" content="自编码器原理及介绍引子在我们做机器学习或者数据挖掘过程中，常常会遇见特征维度过多的情况，或者特征意义不明，我们希望能够将现有特征进行整合，形成具有代表性的更精简的特征，这便是我们通常所谓的降维。 传统降维方法一种我们经常听到或使用的方法是：主成分分析法（PCA，Principal Component Analysis），这是一种无监督学习的方法。通过现有的n维特征，将n维特征映射到k维上（k&amp;lt">
+<meta name="keywords" content="特征工程,自编码器,深度学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自编码器原理及介绍">
+<meta property="og:url" content="http://yoursite.com/posts/programming/2018-01-13-自编码器原理及介绍.html">
 <meta property="og:site_name" content="CTの一方寸土">
-<meta property="og:description" content="SHU, UTC机器学习、特征工程、深度学习、NLP">
+<meta property="og:description" content="自编码器原理及介绍引子在我们做机器学习或者数据挖掘过程中，常常会遇见特征维度过多的情况，或者特征意义不明，我们希望能够将现有特征进行整合，形成具有代表性的更精简的特征，这便是我们通常所谓的降维。 传统降维方法一种我们经常听到或使用的方法是：主成分分析法（PCA，Principal Component Analysis），这是一种无监督学习的方法。通过现有的n维特征，将n维特征映射到k维上（k&amp;lt">
+<meta property="og:updated_time" content="2018-01-14T17:03:24.693Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CTの一方寸土">
-<meta name="twitter:description" content="SHU, UTC机器学习、特征工程、深度学习、NLP">
+<meta name="twitter:title" content="自编码器原理及介绍">
+<meta name="twitter:description" content="自编码器原理及介绍引子在我们做机器学习或者数据挖掘过程中，常常会遇见特征维度过多的情况，或者特征意义不明，我们希望能够将现有特征进行整合，形成具有代表性的更精简的特征，这便是我们通常所谓的降维。 传统降维方法一种我们经常听到或使用的方法是：主成分分析法（PCA，Principal Component Analysis），这是一种无监督学习的方法。通过现有的n维特征，将n维特征映射到k维上（k&amp;lt">
   
     <link rel="alternative" href="/atom.xml" title="CTの一方寸土" type="application/atom+xml">
   
@@ -164,52 +166,79 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-自编码器原理及介绍" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/posts/programming/2017-12-28-随机森林原理介绍与适用情况（综述篇）.html" class="archive-article-date">
-  	<time datetime="2017-12-27T17:47:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/posts/programming/2017-12-28-随机森林原理介绍与适用情况（综述篇）.html">随机森林原理介绍与适用情况（综述篇）</a>
+    <h1 class="article-title" itemprop="name">
+      自编码器原理及介绍
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/posts/programming/2018-01-13-自编码器原理及介绍.html" class="archive-article-date">
+  	<time datetime="2018-01-13T14:34:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="自编码器原理及介绍"><a href="#自编码器原理及介绍" class="headerlink" title="自编码器原理及介绍"></a>自编码器原理及介绍</h1><h2 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h2><p>在我们做机器学习或者数据挖掘过程中，常常会遇见特征维度过多的情况，或者特征意义不明，我们希望能够将现有特征进行整合，形成具有代表性的更精简的特征，这便是我们通常所谓的<strong>降维</strong>。</p>
+<h2 id="传统降维方法"><a href="#传统降维方法" class="headerlink" title="传统降维方法"></a>传统降维方法</h2><p>一种我们经常听到或使用的方法是：主成分分析法（PCA，Principal Component Analysis），这是一种无监督学习的方法。<br>通过现有的n维特征，将n维特征映射到k维上（k&lt; n），这k维特征通常是全新的正交特征，称为主元，是重新构造出来的k维特征。<br><a id="more"></a><br>我们一般认为，信号具有较大的方差（包含信息），噪声具有较小的方差。所以我们认为的最好的k个特征应该尽可能的包含有用信号，亦即信号损失尽可能小。故在将n维特征转换为k维后，取的是前k个较大方差的特征方向。而新特征的选择，也就是选择那些方差损失最小的特征。PCA详细信息可参考下面的知乎贴：<br><a href="https://www.zhihu.com/question/38417101/answer/94338598" target="_blank" rel="noopener">在做主成分分析（pca）时，选取的主特征是原来数据的哪些特征呢？</a><br><a href="https://www.zhihu.com/question/41120789/answer/139295914" target="_blank" rel="noopener">谁能用通俗易懂的语言讲解一下什么是PCA主成分分析？</a></p>
+<p><strong>存在问题</strong>：它本质上是线性变化。因为新的k维特征矩阵=原始矩阵*特征向量矩阵，实际上对于每一个新特征，其实是原始特征的某种线性变换。因此，对于非线性的特征抽象或者降维，PCA将无能为力。</p>
+<h2 id="神经网络与自编码器"><a href="#神经网络与自编码器" class="headerlink" title="神经网络与自编码器"></a>神经网络与自编码器</h2><p>待续</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">特征工程</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">随机森林</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">自编码器</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">深度学习</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -222,17 +251,104 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/posts/programming/2018-01-13-自编码器原理及介绍.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/posts/programming/2018-01-11-Docker安装基于CentOS的双Python系统流程.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Docker安装基于CentOS的双Python系统流程</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -255,8 +371,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

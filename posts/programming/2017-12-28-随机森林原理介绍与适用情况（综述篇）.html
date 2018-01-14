@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/12 | CTの一方寸土</title>
+  <title>随机森林原理介绍与适用情况（综述篇） | CTの一方寸土</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SHU, UTC机器学习、特征工程、深度学习、NLP">
-<meta property="og:type" content="website">
-<meta property="og:title" content="CTの一方寸土">
-<meta property="og:url" content="http://yoursite.com/archives/2017/12/index.html">
+  <meta name="description" content="随机森林原理介绍与适用情况（综述篇）一句话介绍随机森林是一种集成算法（Embedding Learning），它属于Bagging类型，通过组合多个弱分类器，最终结果通过投票或取均值，使得整体模型的结果具有较高的精确度和泛化性能。其可以取得不错成绩，主要归功于“随机”和“森林”，一个使它具有抗过拟合能力，一个使它更加精准。 Bagging【自助法】它通过自助法（bootstrap）重采样技术，从训">
+<meta name="keywords" content="机器学习,随机森林">
+<meta property="og:type" content="article">
+<meta property="og:title" content="随机森林原理介绍与适用情况（综述篇）">
+<meta property="og:url" content="http://yoursite.com/posts/programming/2017-12-28-随机森林原理介绍与适用情况（综述篇）.html">
 <meta property="og:site_name" content="CTの一方寸土">
-<meta property="og:description" content="SHU, UTC机器学习、特征工程、深度学习、NLP">
+<meta property="og:description" content="随机森林原理介绍与适用情况（综述篇）一句话介绍随机森林是一种集成算法（Embedding Learning），它属于Bagging类型，通过组合多个弱分类器，最终结果通过投票或取均值，使得整体模型的结果具有较高的精确度和泛化性能。其可以取得不错成绩，主要归功于“随机”和“森林”，一个使它具有抗过拟合能力，一个使它更加精准。 Bagging【自助法】它通过自助法（bootstrap）重采样技术，从训">
+<meta property="og:updated_time" content="2018-01-14T17:03:12.462Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CTの一方寸土">
-<meta name="twitter:description" content="SHU, UTC机器学习、特征工程、深度学习、NLP">
+<meta name="twitter:title" content="随机森林原理介绍与适用情况（综述篇）">
+<meta name="twitter:description" content="随机森林原理介绍与适用情况（综述篇）一句话介绍随机森林是一种集成算法（Embedding Learning），它属于Bagging类型，通过组合多个弱分类器，最终结果通过投票或取均值，使得整体模型的结果具有较高的精确度和泛化性能。其可以取得不错成绩，主要归功于“随机”和“森林”，一个使它具有抗过拟合能力，一个使它更加精准。 Bagging【自助法】它通过自助法（bootstrap）重采样技术，从训">
   
     <link rel="alternative" href="/atom.xml" title="CTの一方寸土" type="application/atom+xml">
   
@@ -164,36 +166,76 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-随机森林原理介绍与适用情况（综述篇）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/posts/programming/2017-12-28-随机森林原理介绍与适用情况（综述篇）.html" class="archive-article-date">
-  	<time datetime="2017-12-27T17:47:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/posts/programming/2017-12-28-随机森林原理介绍与适用情况（综述篇）.html">随机森林原理介绍与适用情况（综述篇）</a>
+    <h1 class="article-title" itemprop="name">
+      随机森林原理介绍与适用情况（综述篇）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/posts/programming/2017-12-28-随机森林原理介绍与适用情况（综述篇）.html" class="archive-article-date">
+  	<time datetime="2017-12-27T17:47:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="随机森林原理介绍与适用情况（综述篇）"><a href="#随机森林原理介绍与适用情况（综述篇）" class="headerlink" title="随机森林原理介绍与适用情况（综述篇）"></a>随机森林原理介绍与适用情况（综述篇）</h1><h2 id="一句话介绍"><a href="#一句话介绍" class="headerlink" title="一句话介绍"></a>一句话介绍</h2><p>随机森林是一种集成算法（Embedding Learning），它属于Bagging类型，通过组合多个弱分类器，最终结果通过投票或取均值，使得整体模型的结果具有较高的精确度和泛化性能。其可以取得不错成绩，主要归功于“<strong>随机</strong>”和“<strong>森林</strong>”，一个使它具有抗过拟合能力，一个使它更加精准。</p>
+<h2 id="Bagging"><a href="#Bagging" class="headerlink" title="Bagging"></a>Bagging</h2><p>【<strong>自助法</strong>】它通过自助法（bootstrap）重采样技术，从训练集里面采集固定个数的样本，但是每采集一个样本后，都将样本放回。也就是说，之前采集到的样本在放回后有可能继续被采集到。<br>【<strong>OOB</strong>】在Bagging的每轮随机采样中，训练集中大约有36.8%的数据没有被采样集采集中。对于这部分没采集到的数据，我们常常称之为袋外数据(Out Of Bag，简称OOB)。这些数据没有参与训练集模型的拟合，因此可以用来检测模型的泛化能力。<br><a id="more"></a><br>【<strong>随机性</strong>】对于我们的Bagging算法，一般会随机采集和训练集样本数N一样个数的样本。这样得到的采样集和训练集样本的个数相同，但是样本内容不同。通过这样的自助法生成k个分类树组成随机森林，且这k个分类树的采样集的数据也不同，做到<font color="#0099ff"><strong>样本随机性</strong></font>。<br>【<strong>随机性</strong>】同时，在生成每棵树的时候，每个树选取的特征都仅仅是随机选出的少数特征，一般默认取特征总数m的开方。因此，不但样本是随机的，也保证了<font color="#0099ff"><strong>特征随机性</strong></font>。<br>【<strong>输出</strong>】Bagging的集合策略也比较简单，对于分类问题，通常使用简单投票法，得到最多票数的类别或者类别之一为最终的模型输出。对于回归问题，通常使用简单平均法，对T个弱学习器得到的回归结果进行算术平均得到最终的模型输出。<br>【<strong>特点</strong>】由于随机性，对于降低模型的方差很有作用，故随机森林一般不需要额外做剪枝，即可以取得较好的泛化能力和抗过拟合能力（Low Variance）。当然对于训练集的拟合程度就会差一些，也就是模型的偏倚会大一些（High Bias），<strong>仅仅是相对的</strong>。</p>
+<h2 id="随机森林"><a href="#随机森林" class="headerlink" title="随机森林"></a>随机森林</h2><p>随机森林(Random Forest，RF）是Bagging算法的一种，其实在介绍完Bagging算法之后，随机森林几乎是呼之欲出的。RF相对于Bagging只是对其中一些细节做了自己的规定和设计，使用了CART决策树作为弱学习器。换句话说，其实我们只是将使用CART决策树作为弱学习器的Bagging方法称为随机森林。</p>
+<h2 id="抗过拟合"><a href="#抗过拟合" class="headerlink" title="抗过拟合"></a>抗过拟合</h2><p>首先，正如Bagging介绍中提到的，每个树选取使用的特征时，都是从全部m个特征中随机产生的，本身已经降低了过拟合的风险和趋势。模型不会被特定的特征值或者特征组合所决定，随机性的增加，将控制模型的拟合能力不会无限提高。<br>第二，与决策树不同，RF对决策树的建立做了改进。对于普通的决策树，我们会在节点上所有的m个样本特征中选择一个最优的特征来做决策树的左右子树划分。但是RF的每个树，其实选用的特征是一部分，在这些少量特征中，选择一个最优的特征来做决策树的左右子树划分，将随机性的效果扩大，进一步增强了模型的泛化能力。<br>假设每棵树选取msub个特征，msub越小，此时模型对于训练集的拟合程度会变差，偏倚增加，但是会泛化能力更强，模型方差减小。msub越大则相反。在实际使用中，一般会将msub的取值作为一个参数，通过开启oob验证或使用交叉验证，不断调整参数以获取一个合适的msub的值。</p>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ol>
+<li>由于采用了集成算法，本身精度比大多数单个算法要好</li>
+<li>在测试集上表现良好，由于两个随机性的引入，使得随机森林不容易陷入过拟合（样本随机，特征随机）</li>
+<li>在工业上，由于两个随机性的引入，使得随机森林具有一定的抗噪声能力，对比其他算法具有一定优势</li>
+<li>由于树的组合，使得随机森林可以处理非线性数据，本身属于非线性分类（拟合）模型</li>
+<li>它能够处理很高维度（feature很多）的数据，并且不用做特征选择，对数据集的适应能力强：既能处理离散型数据，也能处理连续型数据，数据集无需规范化</li>
+<li>训练速度快，可以运用在大规模数据集上</li>
+<li>可以处理缺省值（单独作为一类），不用额外处理</li>
+<li>由于有袋外数据（OOB），可以在模型生成过程中取得真实误差的无偏估计，且不损失训练数据量</li>
+<li>在训练过程中，能够检测到feature间的互相影响，且可以得出feature的重要性，具有一定参考意义</li>
+<li>由于每棵树可以独立、同时生成，容易做成并行化方法</li>
+<li>由于实现简单、精度高、抗过拟合能力强，当面对非线性数据时，适于作为基准模型</li>
+</ol>
+<h2 id="未完待续……"><a href="#未完待续……" class="headerlink" title="未完待续……"></a>未完待续……</h2><h2 id="参考目录"><a href="#参考目录" class="headerlink" title="参考目录"></a>参考目录</h2><ul>
+<li>[1]: <a href="https://www.cnblogs.com/pinard/p/6156009.html" target="_blank" rel="noopener">https://www.cnblogs.com/pinard/p/6156009.html</a></li>
+<li>[2]: <a href="https://www.cnblogs.com/maybe2030/p/4585705.html" target="_blank" rel="noopener">https://www.cnblogs.com/maybe2030/p/4585705.html</a></li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -209,7 +251,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -222,17 +264,108 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/posts/programming/2017-12-28-随机森林原理介绍与适用情况（综述篇）.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/posts/programming/2018-01-11-Docker安装基于CentOS的双Python系统流程.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Docker安装基于CentOS的双Python系统流程
+        
+      </div>
+    </a>
   
   
-    </div></section>
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -255,8 +388,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
