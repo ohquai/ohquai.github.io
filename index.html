@@ -398,6 +398,87 @@
 
 
   
+    <article id="post-随机森林原理介绍与适用情况（综述篇）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/28/随机森林原理介绍与适用情况（综述篇）/">随机森林原理介绍与适用情况（综述篇）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/28/随机森林原理介绍与适用情况（综述篇）/" class="archive-article-date">
+  	<time datetime="2017-12-27T17:47:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="随机森林原理介绍与适用情况"><a href="#随机森林原理介绍与适用情况" class="headerlink" title="随机森林原理介绍与适用情况"></a>随机森林原理介绍与适用情况</h1><h2 id="一句话介绍"><a href="#一句话介绍" class="headerlink" title="一句话介绍"></a>一句话介绍</h2><p>随机森林是一种集成算法（Embedding Learning），它属于Bagging类型，通过组合多个弱分类器，最终结果通过投票或取均值，使得整体模型的结果具有较高的精确度和泛化性能。其可以取得不错成绩，主要归功于“<strong>随机</strong>”和“<strong>森林</strong>”，一个使它具有抗过拟合能力，一个使它更加精准。</p>
+<h2 id="Bagging"><a href="#Bagging" class="headerlink" title="Bagging"></a>Bagging</h2><p>【<strong>自助法</strong>】它通过自助法（bootstrap）重采样技术，从训练集里面采集固定个数的样本，但是每采集一个样本后，都将样本放回。也就是说，之前采集到的样本在放回后有可能继续被采集到。<br>【<strong>OOB</strong>】在Bagging的每轮随机采样中，训练集中大约有36.8%的数据没有被采样集采集中。对于这部分没采集到的数据，我们常常称之为袋外数据(Out Of Bag，简称OOB)。这些数据没有参与训练集模型的拟合，因此可以用来检测模型的泛化能力。<br>【<strong>随机性</strong>】对于我们的Bagging算法，一般会随机采集和训练集样本数N一样个数的样本。这样得到的采样集和训练集样本的个数相同，但是样本内容不同。通过这样的自助法生成k个分类树组成随机森林，且这k个分类树的采样集的数据也不同，做到<font color="#0099ff"><strong>样本随机性</strong></font>。<br>【<strong>随机性</strong>】同时，在生成每棵树的时候，每个树选取的特征都仅仅是随机选出的少数特征，一般默认取特征总数m的开方。因此，不但样本是随机的，也保证了<font color="#0099ff"><strong>特征随机性</strong></font>。<br>【<strong>输出</strong>】Bagging的集合策略也比较简单，对于分类问题，通常使用简单投票法，得到最多票数的类别或者类别之一为最终的模型输出。对于回归问题，通常使用简单平均法，对T个弱学习器得到的回归结果进行算术平均得到最终的模型输出。<br>【<strong>特点</strong>】由于随机性，对于降低模型的方差很有作用，故随机森林一般不需要额外做剪枝，即可以取得较好的泛化能力和抗过拟合能力（Low Variance）。当然对于训练集的拟合程度就会差一些，也就是模型的偏倚会大一些（High Bias），<strong>仅仅是相对的</strong>。<br>
+        
+          <a class="article-more-a" href="/2017/12/28/随机森林原理介绍与适用情况（综述篇）/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">随机森林</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/28/随机森林原理介绍与适用情况（综述篇）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
 
 
@@ -499,19 +580,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">随机森林</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">特征工程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">自编码器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">随机森林</a>
               </li>
             
             <div class="clearfix"></div>
