@@ -17,16 +17,16 @@
 <meta property="og:description" content="Docker安装基于CentOS的双Python系统流程引子目前docker容器非常火爆，许多公司已经将docker作为开发和生产环境部署的重要环节，docker的学习不可避免。同时，由于家中和公司一共4台电脑+N台服务器，每一台都要配置环境，相当繁琐，docker的功能正好满足我们在不同环境可以轻松进行开发和测试的需求。因此，我将自己学习、安装、应用docker的过程分享出来，以供读者借鉴，少走">
 <meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/centos/pull-image.jpg">
 <meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/centos/in-container.jpg">
-<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/save-as-image.JPG">
-<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/yum-tool.JPG">
-<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/yum-tool2.JPG">
-<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/download-python.JPG">
-<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/unpack-unzip.JPG">
-<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/configure.JPG">
-<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/make.JPG">
-<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/make-install.JPG">
-<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/matplotlib.JPG">
-<meta property="og:updated_time" content="2018-01-14T17:03:36.592Z">
+<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/centos/save-as-image.JPG">
+<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/centos/yum-tool.JPG">
+<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/centos/yum-tool2.JPG">
+<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/centos/download-python.JPG">
+<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/centos/unpack-unzip.JPG">
+<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/centos/configure.JPG">
+<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/centos/make.JPG">
+<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/centos/make-install.JPG">
+<meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/centos/matplotlib.JPG">
+<meta property="og:updated_time" content="2018-01-15T15:07:09.603Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker安装基于CentOS的双Python系统流程">
 <meta name="twitter:description" content="Docker安装基于CentOS的双Python系统流程引子目前docker容器非常火爆，许多公司已经将docker作为开发和生产环境部署的重要环节，docker的学习不可避免。同时，由于家中和公司一共4台电脑+N台服务器，每一台都要配置环境，相当繁琐，docker的功能正好满足我们在不同环境可以轻松进行开发和测试的需求。因此，我将自己学习、安装、应用docker的过程分享出来，以供读者借鉴，少走">
@@ -216,7 +216,7 @@
 <blockquote>
 <p>docker commit 377 server-centos</p>
 </blockquote>
-<p><img src="https://github.com/ohquai/online-file/raw/master/save-as-image.JPG" alt="创建image"></p>
+<p><img src="https://github.com/ohquai/online-file/raw/master/centos/save-as-image.JPG" alt="创建image"></p>
 <h3 id="4-正式进入CentOS系统"><a href="#4-正式进入CentOS系统" class="headerlink" title="4. 正式进入CentOS系统"></a><strong>4. 正式进入CentOS系统</strong></h3><blockquote>
 <p>docker run -it risk-ml/centos-python bash</p>
 </blockquote>
@@ -224,28 +224,28 @@
 <blockquote>
 <p>yum install wget gcc make zlib-devel git<br>yum install readline-devel openssl-devel<br>yum install bzip2-devel ncurses-devel sqlite-devel gdbm-devel xz-devel tk-devel </p>
 </blockquote>
-<p><img src="https://github.com/ohquai/online-file/raw/master/yum-tool.JPG" alt="安装依赖包"><br>选择y继续<br><img src="https://github.com/ohquai/online-file/raw/master/yum-tool2.JPG" alt="选择y继续"></p>
+<p><img src="https://github.com/ohquai/online-file/raw/master/centos/yum-tool.JPG" alt="安装依赖包"><br>选择y继续<br><img src="https://github.com/ohquai/online-file/raw/master/centos/yum-tool2.JPG" alt="选择y继续"></p>
 <h3 id="6-下载Python3源码"><a href="#6-下载Python3源码" class="headerlink" title="6. 下载Python3源码"></a><strong>6. 下载Python3源码</strong></h3><p>CentOS自带的是Python2.7，Python3以上的版本需要自己安装。<br>在线下载python3.6的压缩包，这个速度到是挺快的。</p>
 <blockquote>
 <p>wget <a href="https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tar.xz" target="_blank" rel="noopener">https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tar.xz</a></p>
 </blockquote>
-<p><img src="https://github.com/ohquai/online-file/raw/master/download-python.JPG" alt="下载Python"></p>
+<p><img src="https://github.com/ohquai/online-file/raw/master/centos/download-python.JPG" alt="下载Python"></p>
 <h3 id="7-解包、解压缩"><a href="#7-解包、解压缩" class="headerlink" title="7. 解包、解压缩"></a><strong>7. 解包、解压缩</strong></h3><blockquote>
 <p>xz -d Python-3.6.1.tar.xz<br>tar -xvf Python-3.6.1.tar</p>
 </blockquote>
-<p><img src="https://github.com/ohquai/online-file/raw/master/unpack-unzip.JPG" alt="解包解压"></p>
+<p><img src="https://github.com/ohquai/online-file/raw/master/centos/unpack-unzip.JPG" alt="解包解压"></p>
 <h3 id="8-配置"><a href="#8-配置" class="headerlink" title="8. 配置"></a><strong>8. 配置</strong></h3><blockquote>
 <p>cd Python-3.6.1<br>./configure –prefix=/usr/local/python3.6 –enable-optimizations</p>
 </blockquote>
-<p><img src="https://github.com/ohquai/online-file/raw/master/configure.JPG" alt="配置"><br>–prefix 是预期安装目录，–enable-optimizations 是优化选项（LTO，PGO 等）加上这个 flag 编译后，性能有 10% 左右的优化（如果没记错的话），但是这会明显的增加编译时间。</p>
+<p><img src="https://github.com/ohquai/online-file/raw/master/centos/configure.JPG" alt="配置"><br>–prefix 是预期安装目录，–enable-optimizations 是优化选项（LTO，PGO 等）加上这个 flag 编译后，性能有 10% 左右的优化（如果没记错的话），但是这会明显的增加编译时间。</p>
 <h3 id="9-编译、安装"><a href="#9-编译、安装" class="headerlink" title="9. 编译、安装"></a><strong>9. 编译、安装</strong></h3><blockquote>
 <p>make</p>
 </blockquote>
-<p><img src="https://github.com/ohquai/online-file/raw/master/make.JPG" alt="make"></p>
+<p><img src="https://github.com/ohquai/online-file/raw/master/centos/make.JPG" alt="make"></p>
 <blockquote>
 <p>make install</p>
 </blockquote>
-<p><img src="https://github.com/ohquai/online-file/raw/master/make-install.JPG" alt="make-install"><br>注意，有时候发现缺少了一些包，在重新yum了之后，需要重新进行configure和make install</p>
+<p><img src="https://github.com/ohquai/online-file/raw/master/centos/make-install.JPG" alt="make-install"><br>注意，有时候发现缺少了一些包，在重新yum了之后，需要重新进行configure和make install</p>
 <h3 id="10-命令映射"><a href="#10-命令映射" class="headerlink" title="10. 命令映射"></a><strong>10. 命令映射</strong></h3><p>这个步骤是为了以后操作更简便，我们将python3的命令映射到环境变量的path中，可以直接调用，省去了指定路径。同时避免了在同时有python2和python3的环境中的版本指定问题。</p>
 <blockquote>
 <p>ln -s /usr/local/python3.6/bin/python3 /usr/bin/python3<br>ln -s /usr/local/python3.6/bin/pip3 /usr/bin/pip3</p>
@@ -273,7 +273,7 @@
 <blockquote>
 <p>import matplotlib<br>matplotlib.use(‘Agg’)<br>from matplotlib.pyplot import * </p>
 </blockquote>
-<p><img src="https://github.com/ohquai/online-file/raw/master/matplotlib.JPG" alt="matplotlib正常调用"><br><br></p>
+<p><img src="https://github.com/ohquai/online-file/raw/master/centos/matplotlib.JPG" alt="matplotlib正常调用"><br><br></p>
 <h3 id="3-安装xgboost"><a href="#3-安装xgboost" class="headerlink" title="3. 安装xgboost"></a><strong>3. 安装xgboost</strong></h3><p>在安装xgboost过程中，容易碰到各种问题，特别是安装0.60以上的版本。<br>各种尝试后，最有效的是通过git clone github上的xgboost进行安装。</p>
 <blockquote>
 <p># 提前安装一些依赖包<br>yum install gcc gcc-c++<br>yum install lapack lapack-devel blas blas-devel</p>
@@ -477,7 +477,7 @@
     </a>
   
   
-    <a href="/posts/programming/2017-12-28-随机森林原理介绍与适用情况（综述篇）.html" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/posts/programming/2017-01-15-随机森林原理介绍与适用情况（综述篇）.html" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">随机森林原理介绍与适用情况（综述篇）</div>
       <i class="icon-circle-right"></i>
     </a>
