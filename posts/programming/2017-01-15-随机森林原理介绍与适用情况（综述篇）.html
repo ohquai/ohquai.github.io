@@ -8,21 +8,21 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>随机森林原理介绍与适用情况（综述篇） | CTの一方寸土</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="随机森林原理介绍与适用情况（综述篇）一句话介绍随机森林是一种集成算法（Embedding Learning），它属于Bagging类型，通过组合多个弱分类器，最终结果通过投票或取均值，使得整体模型的结果具有较高的精确度和泛化性能。其可以取得不错成绩，主要归功于“随机”和“森林”，一个使它具有抗过拟合能力，一个使它更加精准。">
+  <meta name="description" content="随机森林原理介绍与适用情况（综述篇）一句话介绍随机森林是一种集成算法（Ensemble Learning），它属于Bagging类型，通过组合多个弱分类器，最终结果通过投票或取均值，使得整体模型的结果具有较高的精确度和泛化性能。其可以取得不错成绩，主要归功于“随机”和“森林”，一个使它具有抗过拟合能力，一个使它更加精准。">
 <meta name="keywords" content="机器学习,随机森林">
 <meta property="og:type" content="article">
 <meta property="og:title" content="随机森林原理介绍与适用情况（综述篇）">
 <meta property="og:url" content="http://yoursite.com/posts/programming/2017-01-15-随机森林原理介绍与适用情况（综述篇）.html">
 <meta property="og:site_name" content="CTの一方寸土">
-<meta property="og:description" content="随机森林原理介绍与适用情况（综述篇）一句话介绍随机森林是一种集成算法（Embedding Learning），它属于Bagging类型，通过组合多个弱分类器，最终结果通过投票或取均值，使得整体模型的结果具有较高的精确度和泛化性能。其可以取得不错成绩，主要归功于“随机”和“森林”，一个使它具有抗过拟合能力，一个使它更加精准。">
+<meta property="og:description" content="随机森林原理介绍与适用情况（综述篇）一句话介绍随机森林是一种集成算法（Ensemble Learning），它属于Bagging类型，通过组合多个弱分类器，最终结果通过投票或取均值，使得整体模型的结果具有较高的精确度和泛化性能。其可以取得不错成绩，主要归功于“随机”和“森林”，一个使它具有抗过拟合能力，一个使它更加精准。">
 <meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/rf/structure.png">
 <meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/rf/gini.jpg">
 <meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/rf/bilabel-gini.jpg">
 <meta property="og:image" content="https://github.com/ohquai/online-file/raw/master/rf/gini-of-coef.jpg">
-<meta property="og:updated_time" content="2018-01-15T15:06:43.603Z">
+<meta property="og:updated_time" content="2018-01-15T15:29:27.650Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="随机森林原理介绍与适用情况（综述篇）">
-<meta name="twitter:description" content="随机森林原理介绍与适用情况（综述篇）一句话介绍随机森林是一种集成算法（Embedding Learning），它属于Bagging类型，通过组合多个弱分类器，最终结果通过投票或取均值，使得整体模型的结果具有较高的精确度和泛化性能。其可以取得不错成绩，主要归功于“随机”和“森林”，一个使它具有抗过拟合能力，一个使它更加精准。">
+<meta name="twitter:description" content="随机森林原理介绍与适用情况（综述篇）一句话介绍随机森林是一种集成算法（Ensemble Learning），它属于Bagging类型，通过组合多个弱分类器，最终结果通过投票或取均值，使得整体模型的结果具有较高的精确度和泛化性能。其可以取得不错成绩，主要归功于“随机”和“森林”，一个使它具有抗过拟合能力，一个使它更加精准。">
 <meta name="twitter:image" content="https://github.com/ohquai/online-file/raw/master/rf/structure.png">
   
     <link rel="alternative" href="/atom.xml" title="CTの一方寸土" type="application/atom+xml">
@@ -191,8 +191,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="随机森林原理介绍与适用情况（综述篇）"><a href="#随机森林原理介绍与适用情况（综述篇）" class="headerlink" title="随机森林原理介绍与适用情况（综述篇）"></a>随机森林原理介绍与适用情况（综述篇）</h1><h2 id="一句话介绍"><a href="#一句话介绍" class="headerlink" title="一句话介绍"></a>一句话介绍</h2><p>随机森林是一种集成算法（Embedding Learning），它属于Bagging类型，通过组合多个弱分类器，最终结果通过投票或取均值，使得整体模型的结果具有较高的精确度和泛化性能。其可以取得不错成绩，主要归功于“<strong>随机</strong>”和“<strong>森林</strong>”，一个使它具有抗过拟合能力，一个使它更加精准。<br><img src="https://github.com/ohquai/online-file/raw/master/rf/structure.png" alt="bagging结构"><br><br><br><a id="more"></a></p>
-<h2 id="Bagging"><a href="#Bagging" class="headerlink" title="Bagging"></a>Bagging</h2><blockquote>
+        <h1 id="随机森林原理介绍与适用情况（综述篇）"><a href="#随机森林原理介绍与适用情况（综述篇）" class="headerlink" title="随机森林原理介绍与适用情况（综述篇）"></a>随机森林原理介绍与适用情况（综述篇）</h1><h2 id="一句话介绍"><a href="#一句话介绍" class="headerlink" title="一句话介绍"></a>一句话介绍</h2><p>随机森林是一种集成算法（Ensemble Learning），它属于Bagging类型，通过组合多个弱分类器，最终结果通过投票或取均值，使得整体模型的结果具有较高的精确度和泛化性能。其可以取得不错成绩，主要归功于“<strong>随机</strong>”和“<strong>森林</strong>”，一个使它具有抗过拟合能力，一个使它更加精准。<br><img src="https://github.com/ohquai/online-file/raw/master/rf/structure.png" alt="bagging结构"><br><br><br><a id="more"></a></p>
+<h2 id="Bagging"><a href="#Bagging" class="headerlink" title="Bagging"></a>Bagging</h2><p>Bagging也叫自举汇聚法（bootstrap aggregating），是一种在原始数据集上通过有放回抽样重新选出k个新数据集来训练分类器的集成技术。它使用训练出来的分类器的集合来对新样本进行分类，然后用多数投票或者对输出求均值的方法统计所有分类器的分类结果，结果最高的类别即为最终标签。此类算法可以有效降低bias，并能够降低variance。</p>
+<blockquote>
 <p>【<strong>自助法</strong>】它通过自助法（bootstrap）重采样技术，从训练集里面采集固定个数的样本，但是每采集一个样本后，都将样本放回。也就是说，之前采集到的样本在放回后有可能继续被采集到。</p>
 <p>【<strong>OOB</strong>】在Bagging的每轮随机采样中，训练集中大约有36.8%的数据没有被采样集采集中。对于这部分没采集到的数据，我们常常称之为袋外数据(Out Of Bag，简称OOB)。这些数据没有参与训练集模型的拟合，因此可以用来检测模型的泛化能力。</p>
 <p>【<strong>随机性</strong>】对于我们的Bagging算法，一般会对样本使用boostrap进行随机采集，每棵树采集相同的样本数量，一般小于原始样本量。这样得到的采样集每次的内容都不同，通过这样的自助法生成k个分类树组成随机森林，做到<font color="#0099ff"><strong>样本随机性</strong></font>。</p>
@@ -205,8 +206,8 @@
 <p>【<strong>样本量</strong>】相对于一般的Bagging算法，RF会选择采集和训练集样本数N一样个数的样本。</p>
 <p>【<strong>特点</strong>】由于随机性，对于降低模型的方差很有作用，故随机森林一般不需要额外做剪枝，即可以取得较好的泛化能力和抗过拟合能力（Low Variance）。当然对于训练集的拟合程度就会差一些，也就是模型的偏倚会大一些（High Bias），<strong>仅仅是相对的</strong>。</p>
 </blockquote>
-<h2 id="CART树"><a href="#CART树" class="headerlink" title="CART树"></a>CART树</h2><p>CART决策树又称分类回归树，当数据集的因变量为连续性数值时，该树算法就是一个回归树，可以用叶节点观察的均值作为预测值；当数据集的因变量为离散型数值时，该树算法就是一个分类树，可以很好的解决分类问题。<br>但需要注意的是，该算法是一个<strong>二叉树</strong>，即每一个非叶节点只能引伸出两个分支，所以当某个非叶节点是多水平(2个以上)的离散变量时，该变量就有可能被多次使用。同时，若某个非叶节点是连续变量时，决策树也将把他当做离散变量来处理（即在有限的可能值中做划分）</p>
-<h2 id="特征选择"><a href="#特征选择" class="headerlink" title="特征选择"></a>特征选择</h2><p>特征选择目前比较流行的方法是信息增益、增益率、基尼系数和卡方检验。我们将介绍基于基尼系数（GINI）的特征选择，因为随机森林采用的CART决策树就是基于基尼系数选择特征的。<br>基尼系数的选择的标准就是每个子节点达到最高的纯度，即落在子节点中的所有观察都属于同一个分类，此时基尼系数最小，纯度最高，不确定度最小。<br>对于一般的决策树，假如总共有K类，样本属于第k类的概率为：pk，则该概率分布的基尼指数为：<br><img src="https://github.com/ohquai/online-file/raw/master/rf/gini.jpg" alt="GINI系数"><br>基尼指数越大，说明不确定性就越大；基尼系数越小，不确定性越小，数据分割越彻底，越干净。<br>对于CART树而言，由于是二叉树，可以通过下面的表示：<br><img src="https://github.com/ohquai/online-file/raw/master/rf/bilabel-gini.jpg" alt="CART树GINI系数"><br>在我们遍历每个特征的每个分割点时，当使用特征A=a，将D划分为两部分，即D1（满足A=a的样本集合），D2（不满足A=a的样本集合）。则在特征A=a的条件下D的基尼指数为：<br><img src="https://github.com/ohquai/online-file/raw/master/rf/gini-of-coef.jpg" alt="节点纯度"><br>Gini(D)：表示集合D的不确定性。<br>Gini(A,D)：表示经过A=a分割后的集合D的不确定性。<br>随机森林中的每棵CART决策树都是通过不断遍历这棵树的特征子集的所有可能的分割点，寻找Gini系数最小的特征的分割点，将数据集分成两个子集，直至满足停止条件为止。</p>
+<h2 id="CART树"><a href="#CART树" class="headerlink" title="CART树"></a>CART树</h2><p>随机森林的弱分类器使用的是CART数，CART决策树又称分类回归树。当数据集的因变量为连续性数值时，该树算法就是一个回归树，可以用叶节点观察的均值作为预测值；当数据集的因变量为离散型数值时，该树算法就是一个分类树，可以很好的解决分类问题。<br>但需要注意的是，该算法是一个<strong>二叉树</strong>，即每一个非叶节点只能引伸出两个分支，所以当某个非叶节点是多水平(2个以上)的离散变量时，该变量就有可能被多次使用。同时，若某个非叶节点是连续变量时，决策树也将把他当做离散变量来处理（即在有限的可能值中做划分）</p>
+<h2 id="特征选择"><a href="#特征选择" class="headerlink" title="特征选择"></a>特征选择</h2><p>特征选择目前比较流行的方法是信息增益、增益率、基尼系数和卡方检验。这里主要介绍基于基尼系数（GINI）的特征选择，因为随机森林采用的CART决策树就是基于基尼系数选择特征的。<br>基尼系数的选择的标准就是每个子节点达到最高的纯度，即落在子节点中的所有观察都属于同一个分类，此时基尼系数最小，纯度最高，不确定度最小。<br>对于一般的决策树，假如总共有K类，样本属于第k类的概率为：pk，则该概率分布的基尼指数为：<br><img src="https://github.com/ohquai/online-file/raw/master/rf/gini.jpg" alt="GINI系数"><br>基尼指数越大，说明不确定性就越大；基尼系数越小，不确定性越小，数据分割越彻底，越干净。<br>对于CART树而言，由于是二叉树，可以通过下面的表示：<br><img src="https://github.com/ohquai/online-file/raw/master/rf/bilabel-gini.jpg" alt="CART树GINI系数"><br>在我们遍历每个特征的每个分割点时，当使用特征A=a，将D划分为两部分，即D1（满足A=a的样本集合），D2（不满足A=a的样本集合）。则在特征A=a的条件下D的基尼指数为：<br><img src="https://github.com/ohquai/online-file/raw/master/rf/gini-of-coef.jpg" alt="节点纯度"><br>Gini(D)：表示集合D的不确定性。<br>Gini(A,D)：表示经过A=a分割后的集合D的不确定性。<br>随机森林中的每棵CART决策树都是通过不断遍历这棵树的特征子集的所有可能的分割点，寻找Gini系数最小的特征的分割点，将数据集分成两个子集，直至满足停止条件为止。</p>
 <h2 id="抗过拟合"><a href="#抗过拟合" class="headerlink" title="抗过拟合"></a>抗过拟合</h2><p>首先，正如Bagging介绍中提到的，每个树选取使用的特征时，都是从全部m个特征中随机产生的，本身已经降低了过拟合的风险和趋势。模型不会被特定的特征值或者特征组合所决定，随机性的增加，将控制模型的拟合能力不会无限提高。<br>第二，与决策树不同，RF对决策树的建立做了改进。对于普通的决策树，我们会在节点上所有的m个样本特征中选择一个最优的特征来做决策树的左右子树划分。但是RF的每个树，其实选用的特征是一部分，在这些少量特征中，选择一个最优的特征来做决策树的左右子树划分，将随机性的效果扩大，进一步增强了模型的泛化能力。<br>假设每棵树选取msub个特征，msub越小，此时模型对于训练集的拟合程度会变差，偏倚增加，但是会泛化能力更强，模型方差减小。msub越大则相反。在实际使用中，一般会将msub的取值作为一个参数，通过开启oob验证或使用交叉验证，不断调整参数以获取一个合适的msub的值。</p>
 <h2 id="优点总结"><a href="#优点总结" class="headerlink" title="优点总结"></a>优点总结</h2><ol>
 <li>由于采用了集成算法，本身精度比大多数单个算法要好</li>
